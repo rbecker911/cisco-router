@@ -1,0 +1,29 @@
+{"actions":
+  [
+    {
+     "name": "Ping",
+     "type": "Connectivity",
+     "manager_function": "test_connectivity"
+    },
+    {
+     "name": "Get Vulnerabilities",
+     "type": "Get Multiple",
+     "manager_function": "get_vulnerabilities"
+    },
+    {
+    "name": "Enrich Host",
+    "type": "Enrich",
+    "manager_function": "get_host_details"
+    },
+    {
+    "name": "Get Report",
+    "type": "Get",
+    "function": "fetch_report"
+    },
+    {
+    "name": "Launch VM Scan",
+    "type": "Post",
+    "function": "launch_vm_scam"
+    }
+  ]
+}

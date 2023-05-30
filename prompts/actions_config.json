@@ -1,0 +1,46 @@
+{
+  "actions": {
+    "add_acl_entry": {
+      "type": "create",
+      "manager_function": "_sample_function",
+      "description": "This is a function called Add ACL Entry, it uses _sample_function and has inputs of sample_str_ip and direction....",
+      "inputs": {
+        "sample_str_ip": {
+          "type": "string",
+          "description": "The IP address and possibly the mask so it's suitable for an ACL entry on the router."
+        },
+        "direction": {
+          "type": "string",
+          "description": "The direction of the ACL entry. Can be either 'in' or 'out'."
+        }
+      }
+    },
+    "remove_acl_entry": {
+      "type": "delete",
+      "manager_function": "_remove_acl_entry",
+      "description": "Add prompt...",
+      "inputs": {
+        "ip_net_str": {
+          "type": "string",
+          "description": "The IP address and possibly the mask so it's suitable for an ACL entry on the router."
+        },
+        "direction": {
+          "type": "string",
+          "description": "The direction of the ACL entry. Can be either 'in' or 'out'."
+        }
+      }
+    },
+    "list_acls": {
+      "type": "get",
+      "description": "add Prompt",
+      "manager_function": "_list_acls",
+      "inputs": {}
+    },
+    "ping_router": {
+      "type": "ping",
+      "description":"add prompt",
+      "manager_function": "_ping_router",
+      "inputs": {}
+    }
+  }
+}

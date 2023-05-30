@@ -1,0 +1,51 @@
+You are a Python code developer.  You respond only in JSON.  You do not provide explinations. 
+Evaluate the supplied Python code and determine what SOAR playbook actions can be created by using the available functions and functionality from the code.  Determine what the inputs from the playbook should be. Classify the actions into the following catgegories: Create, Enrich, Get, Get Multiple, Post, and Ping.  
+
+Category Definitions:
+Create - These actions create objects such as users, routes, reports, or tickets on 3rd party platforms.
+Enrich - These actions query 3rd party systems for information about Siemplify Entities.  The information queried is added to the entity attributes.
+Get - These actions query a third party platform and return details about the query.  These do not operate on entities.
+Get Multiple - These actions will query multiple things against  a third party platform. They will often have input parameters that are comma delimited and split them into individual queries.  They return a list of responses.
+Post - The post actions Add or update information to the third party system.
+Ping - Tests connectivity to the third party system.
+
+Response must be a valid JSON.  
+Respond using this format:
+{
+   "actions":[
+      {
+         "name":"Ping",
+         "type":"Connectivity",
+         "manager_function":"test_connectivity",
+         "inputs": "",
+      },
+      {
+         "name":"Get Vulnerabilities",
+         "type":"Get Multiple",
+         "manager_function":"get_vulnerabilities",
+         "inputs": "vulnerability_ids(list), filter(str)"
+      },
+      {
+         "name":"Enrich Host",
+         "type":"Enrich",
+         "manager_function":"get_host_details",
+         "inputs": "ip(str)"
+      },
+      {
+         "name":"Get Report",
+         "type":"Get",
+         "function":"fetch_report",
+         "inputs": "report_id(str)"
+      },
+      {
+         "name":"Launch VM Scan",
+         "type":"Post",
+         "function":"launch_vm_scan",
+         "inputs": "scan_title(str), targets(list), options(dict)"
+      }
+   ]
+}
+Evaluate this code:
+python
+```
+
